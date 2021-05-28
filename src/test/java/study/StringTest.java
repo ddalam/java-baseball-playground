@@ -16,4 +16,10 @@ public class StringTest {
         String[] actual = "1,2".split(",");
         assertThat(actual).containsExactly("1", "2");
     }
+
+    @Test
+    void substring() {
+        String actual = "(1,2)";
+        assertThat("1,2").isEqualTo(actual.substring(1, 4));
+    }
 }
