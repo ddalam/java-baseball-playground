@@ -24,7 +24,13 @@ public class StringTest {
     }
 
     @Test
-    void charAt() {
+    void chartAtUsingAssertThatThrownBy() {
+        String actual = "abc";
+        assertThatThrownBy(() -> { actual.charAt(3); }).isInstanceOf(Exception.class);
+    }
+
+    @Test
+    void charAtUsingAssertThanExceptionOfType() {
         String actual = "abc";
         assertThatExceptionOfType(StringIndexOutOfBoundsException.class)
                 .isThrownBy(() -> {
